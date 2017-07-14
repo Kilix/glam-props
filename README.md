@@ -58,11 +58,9 @@ export const size = {
 };
 ```
 
-> `styles.js` file is cool because you can access them anywhere! You can also generate some style guides and of course keep all information in one place.
-
 > **IMPORTANT** It is better to use singular forms for keys. In `bind` mode keys are used to set fallbacks so `color` is better than `colors` as a prop.
 
-So how can I help? `glam-props` package exports single helper method called `useGlamProps`. You can use it in all your components.
+`glam-props` package exports single helper method called `useGlamProps` that provide `glamProps`method.
 
 
 ### Installation
