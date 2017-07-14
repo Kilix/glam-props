@@ -171,3 +171,24 @@ Each key in `s` provides `glamProps` function. Also default value is set automat
 ```
 s.color === glamProps(styles.color, 'color');
 ```
+
+### Theme support
+
+GlamProps also provides theme support. Just use a function instead of an object in your styles
+
+```js
+//styles.js
+export default {
+  color: theme => ({
+    red: theme.colors.danger,
+    white: '#ffffff',
+    black: '#000000',
+  }),
+  size: theme => ({
+    small: theme.sizes.small,
+    medium: 20,
+    big: 30,
+  })
+}
+
+```
