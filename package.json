@@ -11,6 +11,10 @@
     "clean": "rm -rf lib",
     "prepublish": "yarn clean && yarn test && yarn compile"
   },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "./.coverage"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bulby97/glam-props.git"
@@ -27,5 +31,7 @@
     "glamorous": "^3.23.5",
     "jest": "^20.0.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jest-cli": "^20.0.4"
+  }
 }

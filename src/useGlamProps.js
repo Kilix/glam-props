@@ -4,7 +4,7 @@ export const glamProps = (map, fallback) => props => {
   )
   if (keysFromProps.length > 1) {
     if (process.env.NODE_ENV !== 'production') {
-      console.error(
+      throw new Error(
         `[glamProps] Multiple props provided: ${keysFromProps.join(', ')}.`
       )
     }
@@ -18,7 +18,7 @@ export const glamProps = (map, fallback) => props => {
       return map[props[fallback]]
     }
     if (process.env.NODE_ENV !== 'production') {
-      console.error(
+      throw new Error(
         `[glamProps] Unknown fallback prop provided: ${fallback}.`
       )
     }
