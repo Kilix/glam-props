@@ -3,7 +3,7 @@
 
 IN PROGRESS
 
-Simple copycat of styled-props that allows you to set *glam props* in your [*glamorous-components*](https://github.com/paypal/glamorous) without stress. Let's take this `Button` component :
+Simple copycat of [styled-props](https://github.com/RafalFilipek/styled-props) that allows you to set *glam props* in your [*glamorous-components*](https://github.com/paypal/glamorous) without stress. Let's take this `Button` component :
 
 ```jsx
 const Button = glamorous.button(
