@@ -9,7 +9,9 @@
     "compile": "babel -d lib src",
     "compile:watch": "babel -w -d lib src",
     "clean": "rm -rf lib",
-    "prepare": "npm run clean && npm run test && npm run compile"
+    "prepare": "npm run clean && npm run test && npm run compile",
+    "publish-please": "publish-please",
+    "prepublish": "publish-please guard"
   },
   "jest": {
     "collectCoverage": true,
@@ -29,7 +31,8 @@
     "babel-cli": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "glamorous": "^3.23.5",
-    "jest": "^20.0.4"
+    "jest": "^20.0.4",
+    "publish-please": "^2.3.1"
   },
   "dependencies": {
     "jest-cli": "^20.0.4"
