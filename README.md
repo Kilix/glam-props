@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/bulby97/glam-props.svg?branch=master)](https://travis-ci.org/bulby97/glam-props)
 [![Code coverage](https://codecov.io/gh/bulby97/glam-props/branch/master/graph/badge.svg)](https://codecov.io/gh/bulby97/glam-props)
-
-IN PROGRESS
+[![npm version](https://badge.fury.io/js/glam-props.svg)](https://badge.fury.io/js/glam-props)
 
 Simple copycat of [styled-props](https://github.com/RafalFilipek/styled-props) that allows you to set *glam props* in your [*glamorous-components*](https://github.com/paypal/glamorous) without stress. Let's take this `Button` component :
 
@@ -25,7 +24,8 @@ const Button = glamorous.button(
 Now you can simply write
 
 ```jsx
-<Button>Hello</Button> or <Button primary>World!</Button>
+<Button>Hello</Button>
+<Button primary>World!</Button>
 ```
 
 But your application is probably much bigger than single button. And you want to keep your colors, sizes etc. in one place. So let's create simple `styles.js` file.
@@ -38,12 +38,12 @@ export const background = {
   danger: '#DD2C00',
   success: '#7CB342',
   info: '#BBDEFB',
-};
+}
 
 export const color = {
   primary: '#263238',
   default: '#FAFAFA',
-};
+}
 
 export const size = {
   padding: {
@@ -55,7 +55,7 @@ export const size = {
     small: 5,
     default: 10,
   },
-};
+}
 ```
 
 > **IMPORTANT** It is better to use singular forms for keys. In `bind` mode keys are used to set fallbacks so `color` is better than `colors` as a prop.
@@ -76,18 +76,18 @@ npm install glam-props
 ### Basic usage
 
 ```jsx
-import useGlamProps from 'glam-props';
-import glamorous from 'glamorous';
+import useGlamProps from 'glam-props'
+import glamorous from 'glamorous'
 import {
   background,
   color,
   size,
-} from './styles.js';
+} from './styles.js'
 
 const Button = glamorous.button(
   useGlamProps(glamProps => ({
     background: glamProps(background),
-    color: styledProps(color),
+    color: glamProps(color),
     padding: glamProps(size.padding),
     borderRadius: glamProps(size.borderRadius)
   })),
@@ -115,7 +115,7 @@ As you can see each prop can be mapped into specific value for selected css rule
 Everything is based on props. As we know in React you can set `defaultProps` for each component. You can also use them to set default values for styles. For example:
 
 ```jsx
-const Button = styled.button(
+const Button = glamorous.button(
   useGlamProps(glamProps => ({
     color: glamProps(color, 'color')
   }))
@@ -153,8 +153,8 @@ export default {
 ```
 
 ```jsx
-import styles from './styles';
-import { bindStyles } from 'glam-props';
+import styles from './styles'
+import { bindStyles } from 'glam-props'
 
 export default glamorous.button(
   bindStyles(styles)(s => ({
@@ -167,7 +167,7 @@ export default glamorous.button(
 Each key in `s` provides `glamProps` function. Also default value is set automaticly with `key` from map.
 
 ```
-s.color === glamProps(styles.color, 'color');
+s.color === glamProps(styles.color, 'color')
 ```
 
 ### Theme support
