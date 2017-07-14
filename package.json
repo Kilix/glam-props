@@ -9,9 +9,8 @@
     "compile": "babel -d lib src",
     "compile:watch": "babel -w -d lib src",
     "clean": "rm -rf lib",
-    "prepare": "npm run clean && npm run test && npm run compile",
-    "publish-please": "publish-please",
-    "prepublish": "publish-please guard"
+    "prebublish": "npm run clean && npm run test && npm run compile",
+    "publish-please": "publish-please"
   },
   "jest": {
     "collectCoverage": true,
