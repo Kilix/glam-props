@@ -1,0 +1,31 @@
+{
+  "name": "glam-props",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "compile": "babel -d lib src",
+    "compile:watch": "babel -w -d lib src",
+    "clean": "rm -rf lib",
+    "prepublish": "yarn clean && yarn test && yarn compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bulby97/glam-props.git"
+  },
+  "author": "Stéphane Montlouis-Calixte <s.montlouis.calixte@gmail.com> (https://github.com/bulby97)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bulby97/glam-props/issues"
+  },
+  "homepage": "https://github.com/bulby97/glam-props#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "glamorous": "^3.23.5",
+    "jest": "^20.0.4"
+  },
+  "dependencies": {}
+}
